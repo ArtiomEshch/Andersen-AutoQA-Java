@@ -19,12 +19,10 @@ public class Cat extends Animal {
         this.appetite = appetite;
     }
 
-    @Override
     public void swim(int distanse) {
         System.out.println("Коты не умеют плавать");
     }
 
-    @Override
     public void run(int distanse) {
         if (distanse < 0) {
             System.out.println("Дистанция не может быть отрицательной");
@@ -35,7 +33,6 @@ public class Cat extends Animal {
         }
     }
 
-    @Override
     public void eat(Plate plate) {
         if (plate.getMeal() < this.getAppetite()) {
             System.out.println(this.getName() + " не наелся");

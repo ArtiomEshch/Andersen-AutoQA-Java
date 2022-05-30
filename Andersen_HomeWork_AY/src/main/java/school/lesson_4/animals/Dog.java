@@ -14,7 +14,6 @@ public class Dog extends Animal {
         dogNumber++;
     }
 
-    @Override
     public void swim(int distanse) {
         if (distanse < 0) {
             System.out.println("Дистанция не может быть отрицательной");
@@ -25,7 +24,6 @@ public class Dog extends Animal {
         }
     }
 
-    @Override
     public void run(int distanse) {
         if (distanse < 0) {
             System.out.println("Дистанция не может быть отрицательной");

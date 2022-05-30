@@ -47,17 +47,11 @@ public class HomeWorkApp {
         System.out.println(animalsNumber + " животных создано");
 
         // Тест парка
-        Park park = new Park(3);
-        park.addAttraction("Карусель", 3, 15); // создание аттракционов
-        park.addAttraction("Качели", 2, 10);
-        park.addAttraction("Ракушки", 2, 5);
-        park.addAttraction("Лодочки", 1, 10); // не достаточно места
-        park.getInfo(); // получение информации о парке
+        Park park = new Park(2);
+        park.printInfo();
 
         // Тест оплаты
-        Payment payment = new Payment();
-        Payment.Product productOne = new Payment.Product("Сыр", 15);
-        Payment.Product productTwo = new Payment.Product("Молоко", 10);
-        payment.pay(productOne, productTwo);
+        Payment payment = new Payment(2); // При запуске необходимо ввести данные продуктов
+        payment.printCheque();
     }
 }
