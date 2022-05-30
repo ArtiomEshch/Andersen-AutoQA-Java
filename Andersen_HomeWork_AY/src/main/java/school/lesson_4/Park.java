@@ -1,5 +1,6 @@
 package school.lesson_4;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Park {
@@ -84,5 +85,35 @@ public class Park {
             System.out.println("Время работы " + attraction.minutesOfWork + " минут");
             System.out.println("Цена за одно посещение: " + attraction.price + " рублей");
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Park park = (Park) o;
+
+        if (capacity != park.capacity) return false;
+        if (attractionNumber != park.attractionNumber) return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        return Arrays.equals(attractions, park.attractions);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = capacity;
+        result = 31 * result + Arrays.hashCode(attractions);
+        result = 31 * result + attractionNumber;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Park{" +
+                "capacity=" + capacity +
+                ", attractions=" + Arrays.toString(attractions) +
+                ", attractionNumber=" + attractionNumber +
+                '}';
     }
 }
