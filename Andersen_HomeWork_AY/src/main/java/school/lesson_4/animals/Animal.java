@@ -1,12 +1,49 @@
 package school.lesson_4.animals;
 
-public abstract class Animal {
+public class Animal {
 
+    private String name;
+    private int appetite;
     public static int animalsNumber = 0;
 
-    public abstract void swim(int distanse);
+    public Animal(String name) {
+        this.name = name;
+        animalsNumber++;
+    }
 
-    public abstract void run(int distanse);
+    public Animal(String name, int appetite) {
+        this.name = name;
+        this.appetite = appetite;
+        animalsNumber++;
+    }
 
-    public abstract void eat(Plate plate);
+    public void swim(int distanse){}
+
+    public void run(int distanse){}
+
+    public void eat(Plate plate){}
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAppetite() {
+        return appetite;
+    }
+
+    public void setAppetite(int appetite) {
+        this.appetite = appetite;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", appetite=" + appetite +
+                '}';
+    }
 }

@@ -12,7 +12,6 @@ public class HomeWorkApp {
     public static void main(String[] args) {
 
         // Тест методов Cat и Dog
-
         Dog buz = new Dog("Buz");
         Cat ruz = new Cat("Ruz");
 
@@ -22,7 +21,6 @@ public class HomeWorkApp {
         ruz.swim(11);
 
         // Тест задания с тарелкой
-
         Cat[] arrayCat = new Cat[5];
 
         arrayCat[0] = new Cat("Cat One", 2);
@@ -48,10 +46,13 @@ public class HomeWorkApp {
 
         // Тест парка
         Park park = new Park(2);
+        park.addAttraction("Карусель", 2, 20); // добавлен объект
+        park.addAttraction("Лодочки", 3, 30); // добавлен объект
+        park.addAttraction("Ракушки", 1, 10); // места нет
         park.printInfo();
 
         // Тест оплаты
-        Payment payment = new Payment(2); // При запуске необходимо ввести данные продуктов
+        Payment payment = new Payment(2); // При запуске необходимо ввести данные вручную
         payment.printCheque();
     }
 }

@@ -6,6 +6,7 @@ public class Park {
 
     private int capacity;
     private Attraction[] attractions;
+    private int attractionNumber = 0;
 
     public class Attraction {
         private String name;
@@ -46,17 +47,33 @@ public class Park {
     public Park(int capacity) {
         this.capacity = capacity;
         this.attractions = new Attraction[capacity];
-        Scanner inputData = new Scanner(System.in);
-        for (int i = 0; i < attractions.length; i++) {
-            System.out.println("Аттракцион " + (i + 1) + ": ");
+    }
+
+    public void addAttraction() {
+        if (attractionNumber < capacity) {
+            System.out.println("Введите информацию об аттракционе");
+            Scanner inputData = new Scanner(System.in);
             System.out.print("Название: ");
             String name = inputData.next();
             System.out.print("Цена: ");
             int price = inputData.nextInt();
             System.out.print("Сколько минут работает: ");
             int minutesOfWork = inputData.nextInt();
-            attractions[i] = new Park.Attraction(name, minutesOfWork, price);
+            attractions[attractionNumber] = new Park.Attraction(name, minutesOfWork, price);
+            attractionNumber++;
             System.out.println("Аттракцион добавлен");
+        } else {
+            System.out.println("В парке кончилось место");
+        }
+    }
+
+    public void addAttraction(String name, int minutesOfWork, int price) {
+        if (attractionNumber < capacity) {
+            attractions[attractionNumber] = new Park.Attraction(name, minutesOfWork, price);
+            attractionNumber++;
+            System.out.println("Аттракцион добавлен");
+        } else {
+            System.out.println("В парке кончилось место");
         }
     }
 
