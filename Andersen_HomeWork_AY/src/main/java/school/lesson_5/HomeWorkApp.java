@@ -1,5 +1,6 @@
 package school.lesson_5;
 
+
 import school.lesson_5.box.Apple;
 import school.lesson_5.box.Box;
 import school.lesson_5.box.Fruit;
@@ -42,4 +43,6 @@ public class HomeWorkApp {
         System.out.println(boxApple.getWeight(apl));
         System.out.println(boxAppleTwo.getWeight(apl));
     }
+=======
+public class HomeWorkApp {
 }
